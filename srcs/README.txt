@@ -1,24 +1,3 @@
-docker run
-
-docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-
-Exemple: docker run --name test -it debian
-
-docker run -d -p 80:80 docker/getting-started
-
--d : run the container in detached mode (in the background)
--p 80:80 - map port 80 of the host to port 80 in the container
-docker/getting-started - the image to use
-
-Run container named test using the Debian:latest image , -it : keep the skin open even if not attached and allocate pseudo 
-
-docker image
-Docker image build : build image from Dockerfile
-
-docker container
-
-docker container COMMAND
-
 Install and configure nginx web server on alpine linux
  
 https://www.osetc.com/en/how-to-install-and-configure-nginx-web-server-on-alpine-linux.html

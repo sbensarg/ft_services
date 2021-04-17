@@ -57,6 +57,7 @@ $ kubectl apply -f service.yaml
 
 type=LoadBalancer : indicates that you want to expose your Service outside of the cluster.
 - to view the service created:  $kubectl get services.
+ClusterIP : Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default ServiceType
 
 MetalLB is a Kubernetes-aware solution that will monitor for services with the type LoadBalancer and assign them an IP address from a virtual pool.
 It uses BGP(Border Gateway Protocol) or Layer 2 (with ARP Address Resolution Protocol) to expose services.

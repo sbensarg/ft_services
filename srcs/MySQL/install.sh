@@ -1,19 +1,26 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Dockerfile                                         :+:      :+:    :+:    #
+#    install.sh                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/15 13:22:14 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/16 12:58:48 by sbensarg         ###   ########.fr        #
+#    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
+#    Updated: 2021/04/17 15:49:57 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM alpine:3.11
-COPY . .
-RUN chmod +x install.sh
-RUN ./install.sh
-EXPOSE 5000
-RUN chmod +x start.sh
-CMD  ./start.sh && tail -f /dev/null
+#!/bin/bash
+apk update
+apk add openrc
+openrc default
+rc-update add mariadb default
+apk add mariadb mariadb-common mariadb-client
+/etc/init.d/mariadb setup
+chown -R mysql: /var/lib/mysql
+
+# mv database.sql .
+# mysql -u root < database.sql
+# rm database.sql
+
+# cat /etc/mysql/my.cnf "datadir=/var/lib/mysql" > /etc/mysql/my.cnf

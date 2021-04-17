@@ -1,19 +1,15 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Dockerfile                                         :+:      :+:    :+:    #
+#    start.sh                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/15 13:22:14 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/16 12:58:48 by sbensarg         ###   ########.fr        #
+#    Created: 2021/04/13 16:23:06 by sbensarg          #+#    #+#              #
+#    Updated: 2021/04/16 17:00:04 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FROM alpine:3.11
-COPY . .
-RUN chmod +x install.sh
-RUN ./install.sh
-EXPOSE 5000
-RUN chmod +x start.sh
-CMD  ./start.sh && tail -f /dev/null
+#!/bin/bash
+
+rc-service mariadb start

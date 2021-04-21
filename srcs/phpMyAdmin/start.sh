@@ -6,11 +6,11 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:23:06 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/16 12:59:07 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/04/20 14:00:24 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
 
-rc-service nginx restart
-rc-service php-fpm7 restart
+rc-service nginx start
+rc-service php-fpm7 start

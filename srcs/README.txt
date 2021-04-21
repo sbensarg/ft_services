@@ -71,6 +71,9 @@ $ kubectl apply -f ../../metallb.yaml
 
 $ minikube service nginx-service
 
+copy file from deployment to local
+kubectl exec deploy/phpmyadmin-deployment cat /www/phpmyadmin/sql/create_tables.sql > ../MySQL/create_tables.sql
+
 
 
 

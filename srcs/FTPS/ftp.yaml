@@ -1,24 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: ftp-deployment
   labels:
-    app: nginx
+    app: ftp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: ftp
   template:
     metadata:
       labels:
-        app: nginx
+        app: ftp
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: ftp
+        image: ftp
         imagePullPolicy: Never
         ports:
-        - containerPort: 80
-        - containerPort: 443
-        - containerPort: 22
+        - containerPort: 21

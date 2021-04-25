@@ -6,20 +6,36 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/22 13:50:54 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/04/25 16:29:26 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
-apk update
-apk add openrc --no-cache
+
+#ftp server
+apk add vsftpd
+apk add openrc
 openrc default
-apk add mariadb mariadb-common mariadb-client
-rc-update add mariadb default
-/etc/init.d/mariadb setup
-mv /mariadb-server.cnf etc/my.cnf.d/mariadb-server.cnf
+#Enable upload by local user. Enable read by anonymous user. Disable upload by anonymous user.
+cat <<EOF | tee /etc/vsftpd/vsftpd.conf
+listen=YES
+local_enable=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+pam_service_name=vsftpd
+seccomp_sandbox=NO
 
+# Enable upload by local user.
+write_enable=YES
 
-#rm database.sql
+# Enable read by anonymous user (without username and password).
+secure_chroot_dir=/var/empty
+anonymous_enable=YES
+anon_root=/srv/ftp
+no_anon_password=YES
+EOF
+rc-update add vsftpd default
+rc-service vsftpd start
 
-# cat /etc/mysql/my.cnf "datadir=/var/lib/mysql" > /etc/mysql/my.cnf
+#ftp client(lftp)
+apk add lftp

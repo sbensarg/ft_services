@@ -37,7 +37,7 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
  */
 
 /* User used to manipulate with storage */
-$cfg['Servers'][$i]['controlhost'] = 'mysql-service';
+// $cfg['Servers'][$i]['controlhost'] = 'mysql-service';
 $cfg['Servers'][$i]['controlport'] = '3306';
 $cfg['Servers'][$i]['controluser'] = 'pma';
 $cfg['Servers'][$i]['controlpass'] = 'pmapass';

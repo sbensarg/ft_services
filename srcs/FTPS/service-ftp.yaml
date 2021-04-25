@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ftp-service
+spec:
+  selector:
+    app: ftp
+  type: ClusterIP
+  ports:
+  - name: http
+    protocol: TCP
+    port: 21
+    targetPort: 21

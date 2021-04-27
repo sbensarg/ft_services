@@ -6,10 +6,12 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:23:06 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/25 16:03:59 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/04/27 16:22:22 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/bash
 
-rc-service vsftpd restart
+
+rc-service vsftpd start
+vsftpd /etc/vsftpd/vsftpd.conf &

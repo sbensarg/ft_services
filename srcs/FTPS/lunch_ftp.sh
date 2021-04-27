@@ -1,6 +1,6 @@
 eval $(minikube docker-env)
-docker build -t ftp .
-kubectl apply -f ftp.yaml
-kubectl apply -f service_ftp.yaml
+docker build -t ftps .
+kubectl apply -f ftps.yaml
+kubectl apply -f service_ftps.yaml
 minikube dashboard
 

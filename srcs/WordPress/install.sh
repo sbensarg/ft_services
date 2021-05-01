@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/23 14:19:31 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/04/30 17:19:52 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,3 +33,11 @@ tar -xzvf latest.tar.gz
 rm latest.tar.gz
 chown -R www:www /www/wordpress
 mv /wp-config.php wordpress/wp-config.php
+
+#-------------add telegraf---------------#
+echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+apk update && apk upgrade
+apk --no-cache add telegraf
+rc-update add telegraf default
+mkdir -p /etc/telegraf
+mv /telegraf.conf /etc/telegraf/telegraf.conf

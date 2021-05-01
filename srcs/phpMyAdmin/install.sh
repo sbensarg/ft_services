@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/22 15:18:08 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/04/30 16:44:23 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,3 +37,11 @@ mv /config.inc.php phpmyadmin
 mkdir phpmyadmin/tmp
 chmod 777 phpmyadmin/tmp
 chown -R www:www /www/phpmyadmin
+
+#-------------add telegraf---------------#
+echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+apk update && apk upgrade
+apk --no-cache add telegraf
+rc-update add telegraf default
+mkdir -p /etc/telegraf
+mv /telegraf.conf /etc/telegraf/

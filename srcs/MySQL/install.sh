@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/22 13:50:54 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/04/30 16:25:30 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,10 @@ rc-update add mariadb default
 /etc/init.d/mariadb setup
 mv /mariadb-server.cnf etc/my.cnf.d/mariadb-server.cnf
 
-
-#rm database.sql
-
-# cat /etc/mysql/my.cnf "datadir=/var/lib/mysql" > /etc/mysql/my.cnf
+#-------------add telegraf---------------#
+echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+apk update && apk upgrade
+apk --no-cache add telegraf
+rc-update add telegraf default
+mkdir -p /etc/telegraf
+mv telegraf.conf /etc/telegraf/

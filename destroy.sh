@@ -12,3 +12,6 @@ kubectl delete service nginx-service
 
 kubectl delete deployment ftps-deployment
 kubectl delete service ftps-service
+
+kubectl delete deployment influxdb-deployment
+kubectl delete service influxdb-service

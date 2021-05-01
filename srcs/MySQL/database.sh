@@ -3,6 +3,9 @@
 mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 rc-service mariadb start
 
+rc-service influxdb start
+telegraf /etc/telegraf/telegraf.conf &
+
 
 #mv database.sql .
 mariadb -u root -e "CREATE USER  'pma'@'localhost' IDENTIFIED BY 'pmapass';"

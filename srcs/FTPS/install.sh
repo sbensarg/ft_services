@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/27 16:33:27 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/04/30 16:24:45 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,3 +29,10 @@ addgroup sbensarg
 adduser -D -G sbensarg -h /home/sbensarg -s /bin/false sbensarg
 echo "sbensarg:sbensarg" | /usr/sbin/chpasswd
 chown sbensarg:sbensarg /home/sbensarg/ -R
+#-------------add telegraf---------------#
+echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
+apk update && apk upgrade
+apk --no-cache add telegraf
+rc-update add telegraf default
+mkdir -p /etc/telegraf
+mv telegraf.conf /etc/telegraf/

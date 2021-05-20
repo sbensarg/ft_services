@@ -1,5 +1,2 @@
-
-
-rc-service grafana start
-rc-service influxdb start
+grafana/bin/grafana-server --homepath grafana &
 telegraf /etc/telegraf/telegraf.conf &

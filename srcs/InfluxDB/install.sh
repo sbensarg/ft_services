@@ -9,6 +9,5 @@ echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositorie
 apk update && apk upgrade
 apk --no-cache add influxdb telegraf
 rc-update add influxdb default
-rc-update add telegraf default
 mkdir -p /etc/telegraf
 mv telegraf.conf /etc/telegraf/

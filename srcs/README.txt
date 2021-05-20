@@ -1,7 +1,3 @@
-docker run
-
-docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-
 Exemple: docker run --name test -it debian
 
 docker run -d -p 80:80 docker/getting-started
@@ -12,12 +8,7 @@ docker/getting-started - the image to use
 
 Run container named test using the Debian:latest image , -it : keep the skin open even if not attached and allocate pseudo 
 
-docker image
 Docker image build : build image from Dockerfile
-
-docker container
-
-docker container COMMAND
 
 Install and configure nginx web server on alpine linux
  
@@ -32,6 +23,11 @@ kubectl apply -f service.yaml
 Minikube dashboard
 kubectl delete deployment nginx-deployment
 /************************************************/
+
+
+* Un cluster Kubernetes est un ensemble de machines (les nœuds) qui permettent d'exécuter des applications conteneurisées.
+* minikube is a tool that lets you run Kubernetes locally.
+
 steps to deploy a sample app to minikube 
 * create a minikube cluster
 $ export MINIKUBE_HOME=/goinfre/sbensarg/
@@ -43,7 +39,7 @@ $ minikube dashboard
 -Deployment checks on the health of your Pod and restarts the Pod's Container if it terminates.
 -Pod is a group of one or more Containers, tied together for the purposes of administration and networking.
 -to create a Deployment that manages a Pod, we need to create object using the declarative object configuration file(yaml file) using kubectl apply -f <directory>.
-- the pod runs a container based on docker image.
+-the pod runs a container based on docker image.
 
 $ eval $(minikube docker-env)
 $ docker build -t nginx .
@@ -75,6 +71,38 @@ copy file from deployment to local
 kubectl exec deploy/phpmyadmin-deployment cat /www/phpmyadmin/sql/create_tables.sql > ../MySQL/create_tables.sql
 vboxmanage modifyvm "minikube" --memory 5000
 
+
+* Le stockage persistant est tout périphérique de stockage de données qui conserve
+les données après la mise hors tension de ce périphérique.
+
+* PersistentVolume (PV)
+
+Les PV sont des ressources du cluster
+qui ont un cycle de vie indépendant
+de tout pod individuel utilisant un PV.
+Il s'agit du volume "physique" sur la machine
+hôte qui stocke les données persistantes.
+PersistentVolumes fournit des ressources
+de stockage dans un cluster, ce qui permet à la ressource
+de stockage de persister même lorsque les pods qui les
+utilisent sont cyclés. Les volumes persistants peuvent 
+être provisionnés de manière statique ou dynamique,
+et ils peuvent être personnalisés pour une utilisation
+en définissant des propriétés telles que les performances,
+la taille et le mode d'accès.
+
+* PersistentVolumeClaim (PVC)
+
+ Les PVC sont des demandes de ressources
+ qui agissent comme des contrôles de
+ réclamation pour la ressource.
+ Un PVC est une demande de la plate-forme
+ pour créer un PersistentVolume
+ et pour attacher des PV aux pods via un PVC.
+
+* Verify that a PersistentVolume got dynamically provisioned.
+
+$kubectl get pvc
 
 
 

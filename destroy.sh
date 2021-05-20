@@ -15,3 +15,6 @@ kubectl delete service ftps-service
 
 kubectl delete deployment influxdb-deployment
 kubectl delete service influxdb-service
+
+kubectl delete deployment grafana-deployment
+kubectl delete service grafana-service

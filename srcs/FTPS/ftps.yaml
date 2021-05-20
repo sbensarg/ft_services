@@ -22,3 +22,11 @@ spec:
         - containerPort: 21
         - containerPort: 21100
         - containerPort: 21101
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - /launch-crashed-services.sh
+          initialDelaySeconds: 25
+          periodSeconds: 20
+       

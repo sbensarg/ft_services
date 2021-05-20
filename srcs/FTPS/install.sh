@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/30 16:24:45 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/05/20 18:30:31 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,6 @@
 apk update && apk upgrade
 apk add vsftpd
 apk add openssl
-apk add openrc
-openrc default
-rc-update add vsftpd default
-#rc-service vsftpd start
 mkdir -p /etc/ssl/private/
 openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout /etc/ssl/private/vsftpd.private.key.pem -out /etc/ssl/private/vsftpd.cert.pem -subj "/C=MA/ST=BENG/L=BENG/O=LEET/CN=FTPS"
 mv /vsftpd.conf /etc/vsftpd/vsftpd.conf
@@ -33,6 +29,5 @@ chown sbensarg:sbensarg /home/sbensarg/ -R
 echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 apk update && apk upgrade
 apk --no-cache add telegraf
-rc-update add telegraf default
 mkdir -p /etc/telegraf
 mv telegraf.conf /etc/telegraf/

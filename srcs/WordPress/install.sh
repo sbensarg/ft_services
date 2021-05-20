@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/04/30 17:19:52 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/05/20 18:36:12 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,5 @@ mv /wp-config.php wordpress/wp-config.php
 echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 apk update && apk upgrade
 apk --no-cache add telegraf
-rc-update add telegraf default
 mkdir -p /etc/telegraf
 mv /telegraf.conf /etc/telegraf/telegraf.conf

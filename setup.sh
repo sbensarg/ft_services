@@ -1,4 +1,9 @@
+#minikube start
+
+kubectl apply -f srcs/metallb.yaml
+
 eval $(minikube docker-env)
+
 #mysql
 docker build -t mysql srcs/MySQL/.
 kubectl apply -f srcs/MySQL/mysql.yaml

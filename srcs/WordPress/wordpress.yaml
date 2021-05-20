@@ -20,3 +20,10 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 5050
+        livenessProbe:
+          exec:
+            command:
+            - sh
+            - /launch-crashed-services.sh
+          initialDelaySeconds: 25
+          periodSeconds: 20

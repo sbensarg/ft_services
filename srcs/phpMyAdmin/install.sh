@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/05/20 18:35:33 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/05/26 20:11:49 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,10 @@ mv default.conf /etc/nginx/conf.d
 chown -R www:www /www
 
 cd /www
-wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-english.zip
-unzip phpMyAdmin-4.9.0.1-english.zip
-mv phpMyAdmin-4.9.0.1-english/ phpmyadmin
-rm phpMyAdmin-4.9.0.1-english.zip
+wget https://files.phpmyadmin.net/phpMyAdmin/5.0.4/phpMyAdmin-5.0.4-english.zip
+unzip phpMyAdmin-5.0.4-english.zip
+mv phpMyAdmin-5.0.4-english/ phpmyadmin
+rm phpMyAdmin-5.0.4-english.zip
 mv /config.inc.php phpmyadmin
 mkdir phpmyadmin/tmp
 chmod 777 phpmyadmin/tmp

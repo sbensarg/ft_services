@@ -10,4 +10,4 @@ apk update && apk upgrade
 apk --no-cache add influxdb telegraf
 rc-update add influxdb default
 mkdir -p /etc/telegraf
-mv telegraf.conf /etc/telegraf/
+mv /telegraf.conf /etc/telegraf/

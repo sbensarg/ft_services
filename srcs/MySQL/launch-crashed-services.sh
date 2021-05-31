@@ -1,4 +1,4 @@
-pgrep mysql 
+pgrep -f mysql 
 status=$?
 if [ $status != 0 ]
 then

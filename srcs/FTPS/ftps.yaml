@@ -20,8 +20,8 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 21
-        - containerPort: 21100
-        - containerPort: 21101
+        - containerPort: 31110
+        - containerPort: 31111
         livenessProbe:
           exec:
             command:

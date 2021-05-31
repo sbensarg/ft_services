@@ -5,19 +5,6 @@ then
     exit 1;
 fi
 
-pgrep ssh
-status=$?
-if [ $status != 0 ]
-then
-    exit 1;
-fi
-pgrep telegraf
-status=$?
-if [ $status != 0 ]
-then
-    exit 1;
-fi
-
 ps > crash
 grep '\[*\]' crash
 status=$?

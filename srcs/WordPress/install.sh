@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/05/20 18:36:12 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/05/23 11:34:10 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ cd /www
 wget http://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
 rm latest.tar.gz
+mv /wp-config.php wordpress
 chown -R www:www /www/wordpress
-mv /wp-config.php wordpress/wp-config.php
 
 #-------------add telegraf---------------#
 echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories

@@ -31,7 +31,7 @@ kubectl delete deployment nginx-deployment
 steps to deploy a sample app to minikube 
 * create a minikube cluster
 $ export MINIKUBE_HOME=/goinfre/sbensarg/
-$ minikube start --vm-driver=virtualbox --disk-size=5GB
+$ minikube start --vm-driver=virtualbox --disk-size=5GB --memory 5000
 $ minikube dashboard
 
 * Create a deployment

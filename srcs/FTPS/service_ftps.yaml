@@ -14,8 +14,6 @@ spec:
     port: 21
     targetPort: 21
   - name: p1
-    port: 21100
-    targetPort: 21100
+    port: 31110
   - name: p2
-    port: 21101
-    targetPort: 21101
+    port: 31111

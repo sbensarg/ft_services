@@ -40,7 +40,7 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
 // $cfg['Servers'][$i]['controlhost'] = 'mysql-service';
 $cfg['Servers'][$i]['controlport'] = '3306';
 $cfg['Servers'][$i]['controluser'] = 'pma';
-$cfg['Servers'][$i]['controlpass'] = 'pmapass';
+$cfg['Servers'][$i]['controlpass'] = 'sbensarg123';
 
 /* Storage database and tables */
  $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
@@ -74,6 +74,7 @@ $cfg['Servers'][$i]['controlpass'] = 'pmapass';
 $cfg['UploadDir'] = '';
 $cfg['SaveDir'] = '';
 
+$cfg['TempDir'] = 'tmp';
 /**
  * Whether to display icons or text or both icons and text in table row
  * action segment. Value can be either of 'icons', 'text' or 'both'.

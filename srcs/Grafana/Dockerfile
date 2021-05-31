@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/15 13:22:14 by sbensarg          #+#    #+#              #
-#    Updated: 2021/05/18 15:57:57 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/05/23 16:51:19 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,5 @@ RUN chmod +x install.sh
 RUN ./install.sh
 EXPOSE 3000
 RUN chmod +x start.sh
-VOLUME ['/sys/fs/cgroup']
 COPY ./grafana.db ./grafana/data/
 CMD  ./start.sh && tail -f /dev/null

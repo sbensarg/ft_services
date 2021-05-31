@@ -6,7 +6,7 @@
 #    By: sbensarg <sbensarg@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/13 16:21:57 by sbensarg          #+#    #+#              #
-#    Updated: 2021/05/20 18:30:31 by sbensarg         ###   ########.fr        #
+#    Updated: 2021/05/23 16:31:15 by sbensarg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,4 +30,4 @@ echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositorie
 apk update && apk upgrade
 apk --no-cache add telegraf
 mkdir -p /etc/telegraf
-mv telegraf.conf /etc/telegraf/
+mv /telegraf.conf /etc/telegraf/
